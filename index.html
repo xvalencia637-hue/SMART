@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Objetivos SMART: guía interactiva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root{--bg:#F2F6FA;--surface:#fff;--ink:#16243A;--muted:#51627A;--line:#C9D5E3;--ok:#1B7F4B;--bad:#C2314D;
+--S:#0F8B8D;--M:#3A6FD8;--A:#A86A0C;--R:#C2415D;--T:#6B4FBB;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1724;--surface:#172236;--ink:#E6EDF7;--muted:#9FB0C6;--line:#2B3B54;--ok:#4FD08A;--bad:#F27A93;--S:#3CC4C6;--M:#7AA2FF;--A:#E6B04A;--R:#F27A93;--T:#A992F0;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1724;--surface:#172236;--ink:#E6EDF7;--muted:#9FB0C6;--line:#2B3B54;--ok:#4FD08A;--bad:#F27A93;--S:#3CC4C6;--M:#7AA2FF;--A:#E6B04A;--R:#F27A93;--T:#A992F0;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Atkinson Hyperlegible",system-ui,sans-serif;
+background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px;background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;background:var(--bg);opacity:.86;z-index:-1}
+main{max-width:860px;margin:0 auto;padding:28px 18px 56px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,7vw,3.6rem);font-weight:800}
+h2{font-size:1.6rem;margin:48px 0 10px}
+p{margin:.5em 0;max-width:68ch}
+.lead{color:var(--muted);font-size:1.1rem}
+.card{background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:20px}
+.tiles{display:flex;gap:10px;margin:22px 0 14px;flex-wrap:wrap}
+.tile{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:2rem;width:64px;height:64px;border-radius:12px;border:2px solid var(--c);background:transparent;color:var(--c);cursor:pointer}
+.tile[aria-pressed="true"]{background:var(--c);color:var(--surface)}
+.tile:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.goal{font-size:1.25rem;min-height:5.5em}
+.goal mark{background:none;color:var(--c);font-weight:700;border-bottom:3px solid var(--c)}
+.dim{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+.note{color:var(--muted);border-left:4px solid var(--c,var(--line));padding-left:12px;margin-top:12px;min-height:3.4em}
+.btn{font:inherit;font-weight:700;padding:9px 16px;border-radius:10px;border:1.5px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn:hover{background:var(--ink);color:var(--surface)}
+details{background:var(--surface);border:1.5px solid var(--line);border-left:8px solid var(--c);border-radius:10px;margin:10px 0}
+summary{cursor:pointer;padding:14px 16px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.15rem}
+summary b{color:var(--c);font-size:1.5rem;margin-right:8px}
+details .body{padding:0 16px 14px}
+.ex{background:var(--bg);border-radius:8px;padding:10px 12px;margin:8px 0}
+.bad{color:var(--bad);font-weight:700}.good{color:var(--ok);font-weight:700}
+.q{margin:14px 0;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.opts{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.opts .btn{min-width:48px}
+.fb{margin-top:8px;font-weight:700;min-height:1.5em}
+label{display:block;font-weight:700;margin-top:12px}
+label span{font-weight:400;color:var(--muted)}
+input,textarea{width:100%;font:inherit;padding:9px 11px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.checks{list-style:none;padding:0;margin:12px 0}
+.checks li{padding:3px 0}
+.bar{height:10px;border-radius:6px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .3s}
+.final{margin-top:12px;font-size:1.1rem}
+footer{margin-top:48px;color:var(--muted);font-size:.95rem;border-top:1.5px solid var(--line);padding-top:14px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<h1>Objetivos SMART</h1>
+<p class="lead">Una meta como “quiero mejorar” no se puede revisar. Una meta SMART sí. Toca cada letra y mira cómo cambia esta frase.</p>
+
+<div class="card" style="margin-top:20px">
+  <div class="tiles" id="tiles" role="group" aria-label="Letras SMART"></div>
+  <p class="goal" id="goal"></p>
+  <p class="note" id="note" aria-live="polite">Toca una letra para agregarla a la meta.</p>
+  <button class="btn" id="all" style="margin-top:12px">Activar todas</button>
+  <button class="btn" id="none" style="margin-top:12px">Reiniciar</button>
+</div>
+
+<h2>Qué significa cada letra</h2>
+<p>SMART son cinco filtros. Una meta está bien formulada cuando pasa los cinco. Abre cada uno para ver la pregunta clave, un ejemplo con números y el error más común.</p>
+<div id="letters"></div>
+
+<h2>Ponte a prueba</h2>
+<p>En cada meta falta una letra. ¿Cuál es?</p>
+<div class="card" id="quiz"></div>
+<p id="score" class="final" aria-live="polite"></p>
+
+<h2>Arma tu propia meta</h2>
+<p>Escribe una meta real (de la escuela o personal). Las marcas verdes aparecen cuando cada parte cumple lo mínimo.</p>
+<div class="card">
+  <label for="fs">S – Específico <span>¿Qué voy a lograr exactamente?</span></label>
+  <input id="fs" placeholder="Ej.: Aprobar el examen de la Unidad 2 de Bases de Datos">
+  <label for="fm">M – Medible <span>¿Con qué número sabré que lo logré?</span></label>
+  <input id="fm" placeholder="Ej.: con calificación de 8 o más">
+  <label for="fa">A – Alcanzable <span>¿Qué tiempo y recursos tengo?</span></label>
+  <input id="fa" placeholder="Ej.: estudiando 1 hora diaria entre semana">
+  <label for="fr">R – Relevante <span>¿Para qué me sirve?</span></label>
+  <input id="fr" placeholder="Ej.: para mantener mi promedio general">
+  <label for="ft">T – Con tiempo <span>¿Cuál es la fecha límite?</span></label>
+  <input id="ft" placeholder="Ej.: antes del 6 de noviembre de 2026">
+  <ul class="checks" id="checks"></ul>
+  <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+  <p class="final" id="result"></p>
+</div>
+
+<h2>SMART dentro de Scrum</h2>
+<div class="card">
+  <p>La Definition of Done pide criterios con valores medibles cuando el producto lo requiera. Eso es la M de SMART aplicada a un equipo.</p>
+  <div class="ex"><span class="bad">Vago:</span> “El módulo de calificaciones debe ser rápido.”</div>
+  <div class="ex"><span class="good">SMART:</span> “La consulta de calificaciones responde en menos de 2 segundos para el 95 % de las solicitudes, verificado en el entorno de pruebas antes del cierre del Sprint 3.” <br><span style="color:var(--muted)">(Los valores de 2 s y 95 % son un ejemplo: cada equipo define los suyos.)</span></div>
+</div>
+
+<footer>Elaborado por Ximena · Ingeniería en Sistemas Computacionales, TESH · Tarea de Scrum: Definition of Done y objetivos SMART</footer>
+</main>
+
+<script>
+const C={S:'var(--S)',M:'var(--M)',A:'var(--A)',R:'var(--R)',T:'var(--T)'};
+const parts=[
+ {k:'S',on:'subir mi calificación en el examen de la Unidad 3 de Métodos Numéricos',off:'mejorar en Métodos Numéricos',why:'Específico: ya no es “mejorar”, ahora se sabe qué examen y qué unidad.'},
+ {k:'M',on:'de 7 a 9',off:'',why:'Medible: 9 − 7 = 2 puntos de mejora (+28.6 %). Ahora hay un número para comprobar el resultado.'},
+ {k:'A',on:'estudiando 4 horas por semana (16 horas en total)',off:'',why:'Alcanzable: 4 h × 4 semanas = 16 h. Si tienes unas 10 h libres a la semana, 4 h es el 40 % de ese tiempo: exigente pero realista.'},
+ {k:'R',on:'para mantener un promedio general de 8.5',off:'',why:'Relevante: la meta se conecta con algo que te importa, tu promedio general.'},
+ {k:'T',on:'antes del examen del 20 de noviembre de 2026',off:'',why:'Con tiempo: hay fecha límite. Desde el 19 de octubre faltan 32 días, unas 4.5 semanas.'}
+];
+const act=new Set();
+const tiles=document.getElementById('tiles');
+parts.forEach(p=>{const b=document.createElement('button');b.className='tile';b.textContent=p.k;b.style.setProperty('--c',C[p.k]);b.setAttribute('aria-pressed','false');b.setAttribute('aria-label','Letra '+p.k);
+ b.onclick=()=>{act.has(p.k)?act.delete(p.k):act.add(p.k);draw(p)};tiles.appendChild(b)});
+function draw(last){
+ const g=document.getElementById('goal');
+ const html=parts.map(p=>act.has(p.k)?`<mark style="--c:${C[p.k]}">${p.on}</mark>`:(p.off?`<span class="dim">${p.off}</span>`:'')).filter(Boolean).join(' ');
+ g.innerHTML='Quiero '+html+'.';
+ [...tiles.children].forEach((b,i)=>b.setAttribute('aria-pressed',act.has(parts[i].k)));
+ const n=document.getElementById('note');
+ if(last&&act.has(last.k)){n.textContent=last.why;n.style.setProperty('--c',C[last.k])}
+ else if(!act.size){n.textContent='Toca una letra para agregarla a la meta.';n.style.setProperty('--c','var(--line)')}
+ else if(act.size===5){n.textContent='Meta completa: cumple los cinco filtros y se puede revisar el día del examen.'}
+}
+document.getElementById('all').onclick=()=>{parts.forEach(p=>act.add(p.k));draw()};
+document.getElementById('none').onclick=()=>{act.clear();draw()};
+draw();
+
+const info=[
+ {k:'S',n:'Specific (Específico)',q:'¿Qué quiero lograr, con qué y dónde?',bad:'“Estudiar más.”',good:'“Estudiar la Unidad 3 de Métodos Numéricos: bisección y Newton-Raphson.”',tip:'Si dos personas leen tu meta y entienden cosas distintas, falta ser específica.'},
+ {k:'M',n:'Measurable (Medible)',q:'¿Con qué número sabré que lo logré?',bad:'“Entender mejor las bases de datos.”',good:'“Resolver 15 de 20 ejercicios de consultas SQL sin ayuda (75 %).”',tip:'Porcentaje = parte ÷ total × 100. Aquí: 15 ÷ 20 × 100 = 75 %.'},
+ {k:'A',n:'Achievable (Alcanzable)',q:'¿Es posible con mi tiempo y mis recursos?',bad:'“Aprender 5 lenguajes de programación en 1 semana.”',good:'“Aprender lo básico de Python en 3 semanas, con 5 h por semana (15 h).”',tip:'Reta, pero no abruma. Suma tus horas libres antes de comprometerte.'},
+ {k:'R',n:'Relevant (Relevante)',q:'¿Por qué importa y cómo se conecta con mis objetivos mayores?',bad:'“Hacer 10 recetas nuevas para subir mi promedio de Métodos Numéricos.”',good:'“Completar 10 ejercicios de Álgebra Lineal para llegar preparada a la unidad de matrices.”',tip:'Si no puedes explicar para qué sirve, quizá no es tu prioridad ahora.'},
+ {k:'T',n:'Time-bound (Con tiempo)',q:'¿Cuál es la fecha límite y los avances intermedios?',bad:'“Terminar mi proyecto algún día.”',good:'“Entregar el proyecto el 27 de noviembre: 25 % por semana durante 4 semanas.”',tip:'Una fecha crea urgencia. Dividir 100 % ÷ 4 semanas da avances de 25 %.'}
+];
+document.getElementById('letters').innerHTML=info.map(i=>`<details style="--c:${C[i.k]}"><summary><b>${i.k}</b>${i.n}</summary><div class="body"><p><strong>Pregunta clave:</strong> ${i.q}</p><div class="ex"><span class="bad">Mal:</span> ${i.bad}</div><div class="ex"><span class="good">Mejor:</span> ${i.good}</div><p style="color:var(--muted)">${i.tip}</p></div></details>`).join('');
+
+const qs=[
+ {t:'Subir mi promedio de 8.0 a 8.5 estudiando 1 hora diaria.',a:'T',e:'Tiene número y plan, pero no dice hasta cuándo.'},
+ {t:'Quiero entender mejor las bases de datos.',a:'M',e:'“Entender mejor” no se puede medir. Falta un número, como ejercicios resueltos o calificación.'},
+ {t:'Aprender 5 lenguajes de programación en 1 semana.',a:'A',e:'Con 7 días, serían menos de 1.5 días por lenguaje. No es realista.'},
+ {t:'Cocinar 10 recetas nuevas antes del 15 de diciembre para mejorar mi promedio de Métodos Numéricos.',a:'R',e:'Es específica, medible y con fecha, pero la meta no tiene relación con su propósito.'}
+];
+let right=0,done=0;
+const qd=document.getElementById('quiz');
+qs.forEach((q,i)=>{const d=document.createElement('div');d.className='q';
+ d.innerHTML=`<strong>${i+1}. ${q.t}</strong><div class="opts"></div><div class="fb"></div>`;
+ const o=d.querySelector('.opts');
+ 'SMART'.split('').forEach(l=>{const b=document.createElement('button');b.className='btn';b.textContent=l;b.setAttribute('aria-label','Falta la letra '+l);
+  b.onclick=()=>{if(d.dataset.done)return;d.dataset.done=1;done++;const f=d.querySelector('.fb');
+   if(l===q.a){right++;f.className='fb good';f.textContent='Correcto. '+q.e}else{f.className='fb bad';f.textContent='No. La respuesta era '+q.a+'. '+q.e}
+   o.querySelectorAll('button').forEach(x=>x.disabled=true);
+   if(done===qs.length)document.getElementById('score').textContent='Resultado: '+right+' de '+qs.length+' ('+Math.round(right/qs.length*100)+' %).'};
+  o.appendChild(b)});
+ qd.appendChild(d)});
+
+const f={s:document.getElementById('fs'),m:document.getElementById('fm'),a:document.getElementById('fa'),r:document.getElementById('fr'),t:document.getElementById('ft')};
+const rules=[
+ ['S','Específico: al menos 15 caracteres',v=>v.s.length>=15],
+ ['M','Medible: incluye un número',v=>/\d/.test(v.m)],
+ ['A','Alcanzable: explica cómo (10+ caracteres)',v=>v.a.length>=10],
+ ['R','Relevante: explica para qué (10+ caracteres)',v=>v.r.length>=10],
+ ['T','Con tiempo: incluye fecha o plazo con número',v=>/\d/.test(v.t)]
+];
+function check(){
+ const v={};for(const k in f)v[k]=f[k].value.trim();
+ let ok=0;
+ document.getElementById('checks').innerHTML=rules.map(r=>{const p=r[2](v);if(p)ok++;return `<li style="color:${p?'var(--ok)':'var(--muted)'}">${p?'✔️':'○'} <b style="color:${C[r[0]]}">${r[0]}</b> ${r[1]}</li>`}).join('');
+ document.getElementById('bar').style.width=ok*20+'%';
+ document.getElementById('result').textContent=ok===5?'Tu meta: '+[v.s,v.m,v.a,v.r,v.t].join(', ')+'.':'Cumples '+ok+' de 5 criterios.';
+}
+Object.values(f).forEach(e=>e.addEventListener('input',check));check();
+</script>
+</body>
+</html>
